@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Numbers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 5px;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form id="compareForm" onsubmit="return false;">
+        <label for="num1">First Number:</label>
+        <input type="number" id="num1" required>
+        <br>
+        <labelfor="num2">Second Number:</label>
+        <input type="number" id="num2" required>
+        <br>
+        <button type="button" onclick="compareNumbers()">Find Bigger Number</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        function compareNumbers() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            let result = document.getElementById('result');
+            
+            if (num1 > num2) {
+                result.textContent = "The first number is bigger.";
+            } else if (num2 > num1) {
+                result.textContent = "The second number is bigger.";
+            } else {
+                result.textContent = "Both numbers are equal.";
+            }
+        }
+    </script>
+</body>
+</html>
